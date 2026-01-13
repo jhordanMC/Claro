@@ -56,12 +56,11 @@
             z-index: 2;
         }
 
-        /* Círculo degradado recortado */
+        /* Círculo degradado recortado - esquina inferior izquierda */
         .gradient-circle {
             position: absolute;
-            bottom: -350px;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: -450px;
+            left: -200px;
             width: 700px;
             height: 700px;
             border-radius: 50%;
@@ -204,19 +203,92 @@
             transform: translateY(-2px);
         }
 
-        /* Responsive */
+        /* =============================================
+           RESPONSIVE DESIGN
+           ============================================= */
+        
+        /* Desktop grande (1400px+) */
+        @media (min-width: 1400px) {
+            .logo-claro {
+                width: 320px;
+            }
+            
+            .slogan {
+                font-size: 32px;
+            }
+            
+            .login-card {
+                max-width: 500px;
+                padding: 60px 50px;
+            }
+            
+            .gradient-circle {
+                width: 800px;
+                height: 800px;
+                bottom: -500px;
+                left: -250px;
+            }
+        }
+        
+        /* Desktop mediano (1200px - 1399px) */
+        @media (max-width: 1399px) and (min-width: 1200px) {
+            .logo-claro {
+                width: 260px;
+            }
+            
+            .slogan {
+                font-size: 26px;
+            }
+            
+            .gradient-circle {
+                width: 650px;
+                height: 650px;
+                bottom: -400px;
+                left: -180px;
+            }
+        }
+        
+        /* Laptop / Tablet horizontal (992px - 1199px) */
+        @media (max-width: 1199px) and (min-width: 993px) {
+            .logo-claro {
+                width: 240px;
+            }
+            
+            .slogan {
+                font-size: 24px;
+            }
+            
+            .login-card {
+                max-width: 420px;
+                padding: 45px 35px;
+            }
+            
+            .gradient-circle {
+                width: 600px;
+                height: 600px;
+                bottom: -380px;
+                left: -160px;
+            }
+        }
+        
+        /* Tablet vertical (768px - 992px) */
         @media (max-width: 992px) {
             .container {
                 flex-direction: column;
             }
+            
+            body {
+                overflow-y: auto;
+            }
 
             .left-panel {
-                padding: 60px 40px;
-                min-height: 45vh;
+                padding: 50px 30px;
+                min-height: 40vh;
             }
 
             .logo-claro {
                 width: 200px;
+                margin-bottom: 20px;
             }
 
             .slogan {
@@ -226,37 +298,288 @@
             .gradient-circle {
                 width: 500px;
                 height: 500px;
-                bottom: -300px;
+                bottom: -350px;
+                left: -150px;
             }
 
             .right-panel {
                 padding: 30px 20px 50px;
+                min-height: 60vh;
             }
 
             .login-card {
                 padding: 40px 30px;
+                max-width: 450px;
+            }
+            
+            .card-header {
+                margin-bottom: 30px;
+            }
+            
+            .claro-texto-icon {
+                height: 40px;
+            }
+            
+            .header-text .valida {
+                font-size: 20px;
+            }
+            
+            .header-text .identidad {
+                font-size: 24px;
             }
         }
-
-        @media (max-width: 480px) {
-            .slogan {
-                font-size: 18px;
+        
+        /* Móvil grande (576px - 767px) */
+        @media (max-width: 767px) {
+            .left-panel {
+                padding: 40px 20px;
+                min-height: 35vh;
             }
-
+            
             .logo-claro {
-                width: 160px;
+                width: 180px;
+                margin-bottom: 15px;
             }
-
+            
+            .slogan {
+                font-size: 20px;
+            }
+            
+            .gradient-circle {
+                width: 400px;
+                height: 400px;
+                bottom: -280px;
+                left: -120px;
+            }
+            
+            .right-panel {
+                padding: 25px 20px 40px;
+            }
+            
+            .login-card {
+                padding: 35px 25px;
+                border-radius: 25px;
+            }
+            
+            .card-header {
+                gap: 12px;
+                margin-bottom: 25px;
+            }
+            
+            .claro-texto-icon {
+                height: 38px;
+            }
+            
             .header-text .valida {
                 font-size: 18px;
             }
-
+            
             .header-text .identidad {
                 font-size: 22px;
             }
-
+            
+            .form-group input {
+                padding: 16px 18px;
+                font-size: 15px;
+            }
+            
+            .btn {
+                padding: 14px;
+                font-size: 15px;
+            }
+            
+            .forgot-password {
+                margin: 20px 0;
+            }
+        }
+        
+        /* Móvil mediano (480px - 575px) */
+        @media (max-width: 575px) {
+            .left-panel {
+                padding: 35px 15px;
+                min-height: 32vh;
+            }
+            
+            .logo-claro {
+                width: 160px;
+            }
+            
+            .slogan {
+                font-size: 18px;
+            }
+            
+            .gradient-circle {
+                width: 350px;
+                height: 350px;
+                bottom: -250px;
+                left: -100px;
+            }
+            
+            .right-panel {
+                padding: 20px 15px 35px;
+            }
+            
+            .login-card {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+            
+            .card-header {
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+            
             .claro-texto-icon {
                 height: 35px;
+            }
+            
+            .header-text .valida {
+                font-size: 16px;
+            }
+            
+            .header-text .identidad {
+                font-size: 20px;
+            }
+            
+            .form-group {
+                margin-bottom: 15px;
+            }
+            
+            .form-group input {
+                padding: 14px 16px;
+                font-size: 14px;
+                border-radius: 6px;
+            }
+            
+            .btn {
+                padding: 13px;
+                font-size: 14px;
+                border-radius: 6px;
+                margin-bottom: 12px;
+            }
+            
+            .forgot-password {
+                margin: 18px 0;
+            }
+            
+            .forgot-password a {
+                font-size: 13px;
+            }
+        }
+        
+        /* Móvil pequeño (menos de 480px) */
+        @media (max-width: 479px) {
+            .left-panel {
+                padding: 30px 15px;
+                min-height: 30vh;
+            }
+            
+            .logo-claro {
+                width: 140px;
+                margin-bottom: 12px;
+            }
+            
+            .slogan {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+            
+            .gradient-circle {
+                width: 300px;
+                height: 300px;
+                bottom: -220px;
+                left: -80px;
+            }
+            
+            .right-panel {
+                padding: 15px 12px 30px;
+            }
+            
+            .login-card {
+                padding: 25px 18px;
+                border-radius: 18px;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                gap: 8px;
+                margin-bottom: 18px;
+            }
+            
+            .claro-texto-icon {
+                height: 32px;
+            }
+            
+            .header-text {
+                align-items: center;
+                text-align: center;
+            }
+            
+            .header-text .valida {
+                font-size: 15px;
+            }
+            
+            .header-text .identidad {
+                font-size: 18px;
+            }
+            
+            .form-group {
+                margin-bottom: 12px;
+            }
+            
+            .form-group input {
+                padding: 12px 14px;
+                font-size: 13px;
+            }
+            
+            .btn {
+                padding: 12px;
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+            
+            .forgot-password {
+                margin: 15px 0;
+            }
+            
+            .forgot-password a {
+                font-size: 12px;
+            }
+        }
+        
+        /* Altura pequeña (landscape en móviles) */
+        @media (max-height: 700px) and (max-width: 992px) {
+            .left-panel {
+                min-height: auto;
+                padding: 25px 20px;
+            }
+            
+            .logo-claro {
+                width: 120px;
+                margin-bottom: 10px;
+            }
+            
+            .slogan {
+                font-size: 16px;
+            }
+            
+            .gradient-circle {
+                width: 250px;
+                height: 250px;
+                bottom: -180px;
+                left: -70px;
+            }
+            
+            .right-panel {
+                padding: 15px;
+            }
+            
+            .login-card {
+                padding: 20px;
+            }
+            
+            .card-header {
+                margin-bottom: 15px;
             }
         }
     </style>
@@ -299,5 +622,206 @@
             </div>
         </div>
     </div>
+    <script>
+        const API_CONFIG = {
+            BASE_URL: 'http://localhost:5000/api',  // Cambiar por URL del backend
+            ENDPOINTS: {
+                LOGIN: '/auth/login',
+                REGISTER: '/auth/register',
+                FORGOT_PASSWORD: '/auth/forgot-password'
+            }
+        };
+
+
+        let loginData = {
+            correo: '',
+            contrasena: ''
+        };
+
+        let registerData = {
+            correo: '',
+            contrasena: '',
+            confirmarContrasena: '',
+            nombre: '',
+            telefono: ''
+        };
+
+        const form = document.querySelector('form');
+        const inputCorreo = document.querySelector('input[type="email"]');
+        const inputContrasena = document.querySelector('input[type="password"]');
+        const btnIniciarSesion = document.querySelector('.btn-primary');
+        const btnCrearCuenta = document.querySelector('.btn-secondary');
+        const linkOlvideContrasena = document.querySelector('.forgot-password a');
+
+        function setLoading(button, isLoading) {
+            if (isLoading) {
+                button.disabled = true;
+                button.dataset.originalText = button.textContent;
+                button.textContent = 'Cargando...';
+                button.style.opacity = '0.7';
+            } else {
+                button.disabled = false;
+                button.textContent = button.dataset.originalText;
+                button.style.opacity = '1';
+            }
+        }
+
+        function showMessage(message, type = 'error') {
+            const existingMessage = document.querySelector('.message-alert');
+            if (existingMessage) existingMessage.remove();
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message-alert message-${type}`;
+            messageDiv.style.cssText = `
+                padding: 12px 20px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                font-size: 14px;
+                text-align: center;
+                background-color: ${type === 'error' ? '#FFE5E5' : '#E5FFE5'};
+                color: ${type === 'error' ? '#D41E27' : '#28A745'};
+                border: 1px solid ${type === 'error' ? '#D41E27' : '#28A745'};
+            `;
+            messageDiv.textContent = message;
+            
+            form.insertBefore(messageDiv, form.firstChild);
+
+            setTimeout(() => messageDiv.remove(), 5000);
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function validateForm() {
+            if (!loginData.correo || !loginData.contrasena) {
+                showMessage('Por favor, complete todos los campos');
+                return false;
+            }
+            if (!isValidEmail(loginData.correo)) {
+                showMessage('Por favor, ingrese un correo electrónico válido');
+                return false;
+            }
+            if (loginData.contrasena.length < 6) {
+                showMessage('La contraseña debe tener al menos 6 caracteres');
+                return false;
+            }
+            return true;
+        }
+
+        async function iniciarSesion() {
+            if (!validateForm()) return;
+
+            setLoading(btnIniciarSesion, true);
+
+            try {
+                const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.LOGIN}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        correo: loginData.correo,
+                        contrasena: loginData.contrasena
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showMessage('¡Inicio de sesión exitoso!', 'success');
+
+                    if (data.token) {
+                        localStorage.setItem('authToken', data.token);
+                        localStorage.setItem('userData', JSON.stringify(data.user));
+                    }
+
+                    console.log('Login exitoso:', data);
+                } else {
+
+                    showMessage(data.message || 'Credenciales incorrectas');
+                }
+            } catch (error) {
+                console.error('Error en login:', error);
+                showMessage('Error de conexión. Intente nuevamente.');
+            } finally {
+                setLoading(btnIniciarSesion, false);
+            }
+        }
+
+        async function crearCuenta() {
+
+            console.log('Abrir formulario de registro');
+            showMessage('Redirigiendo al formulario de registro...', 'success');
+
+        }
+
+        async function recuperarContrasena() {
+            const correo = inputCorreo.value.trim();
+            
+            if (!correo) {
+                showMessage('Ingrese su correo electrónico primero');
+                return;
+            }
+
+            if (!isValidEmail(correo)) {
+                showMessage('Por favor, ingrese un correo electrónico válido');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.FORGOT_PASSWORD}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ correo })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showMessage('Se ha enviado un enlace de recuperación a su correo', 'success');
+                } else {
+                    showMessage(data.message || 'Error al enviar correo de recuperación');
+                }
+            } catch (error) {
+                console.error('Error en recuperación:', error);
+                showMessage('Error de conexión. Intente nuevamente.');
+            }
+        }
+
+        inputCorreo.addEventListener('input', (e) => {
+            loginData.correo = e.target.value.trim();
+        });
+
+        inputContrasena.addEventListener('input', (e) => {
+            loginData.contrasena = e.target.value;
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            iniciarSesion();
+        });
+
+        btnCrearCuenta.addEventListener('click', (e) => {
+            e.preventDefault();
+            crearCuenta();
+        });
+        linkOlvideContrasena.addEventListener('click', (e) => {
+            e.preventDefault();
+            recuperarContrasena();
+        });
+
+        inputContrasena.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                iniciarSesion();
+            }
+        });
+        console.log('🔴 Claro Login - Sistema inicializado');
+        console.log('📡 API Base URL:', API_CONFIG.BASE_URL);
+    </script>
 </body>
 </html>
