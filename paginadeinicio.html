@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claro Perú - Inicio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFFFF;
+        }
+
+        /* =============================================
+           HEADER SUPERIOR (Barra gris)
+           ============================================= */
+        .top-bar {
+            background-color: #F8F8F8;
+            padding: 8px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #E5E5E5;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .top-bar-left a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #333333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .top-bar-left a:hover {
+            color: #D41E27;
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .top-bar-right a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #333333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .top-bar-right a:hover {
+            color: #D41E27;
+        }
+
+        .top-bar-right .dropdown-arrow {
+            font-size: 10px;
+        }
+
+        .separator {
+            color: #CCCCCC;
+            font-size: 12px;
+        }
+
+        .location-icon {
+            font-size: 14px;
+        }
+
+        /* =============================================
+           HEADER PRINCIPAL (Navbar)
+           ============================================= */
+        .main-header {
+            background-color: #F8F8F8;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            height: 80px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: stretch;
+            height: 80px;
+        }
+
+        .logo-container {
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-claro {
+            height: 45px;
+            width: auto;
+        }
+
+        /* Navegación principal */
+        .main-nav {
+            display: flex;
+            align-items: stretch;
+            height: 100%;
+        }
+
+        .nav-item {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #12100D;
+            text-decoration: none;
+            padding: 0 30px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            position: relative;
+            height: 100%;
+        }
+
+        .nav-item.active {
+            background-color: #D41E27;
+            color: #FFFFFF;
+        }
+
+        .nav-item.active .dropdown-arrow {
+            color: #FFFFFF;
+        }
+
+        .nav-item .dropdown-arrow {
+            font-size: 10px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        /* Header derecha */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding: 0 40px;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #333333;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .icon-btn:hover {
+            color: #D41E27;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #D41E27;
+            color: #FFFFFF;
+            font-size: 10px;
+            font-weight: 600;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-mi-claro {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 25px;
+            border: 2px solid #333333;
+            border-radius: 25px;
+            background-color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-mi-claro:hover {
+            background-color: #D41E27;
+            border-color: #D41E27;
+            color: #FFFFFF;
+        }
+
+        .btn-mi-claro i {
+            font-size: 16px;
+        }
+
+        /* =============================================
+           RESPONSIVE DESIGN
+           ============================================= */
+        
+        /* Ocultar menú hamburguesa en desktop */
+        .menu-toggle {
+            display: none;
+        }
+        
+        /* Desktop grande (1400px+) */
+        @media (min-width: 1400px) {
+            .top-bar {
+                padding: 8px 80px;
+            }
+            
+            .logo-container {
+                padding: 0 50px;
+            }
+            
+            .header-right {
+                padding: 0 80px;
+            }
+            
+            .logo-claro {
+                height: 50px;
+            }
+            
+            .nav-item {
+                padding: 0 35px;
+                font-size: 15px;
+            }
+        }
+        
+        /* Laptop (1200px - 1399px) */
+        @media (max-width: 1399px) and (min-width: 1200px) {
+            .logo-container {
+                padding: 0 30px;
+            }
+            
+            .nav-item {
+                padding: 0 25px;
+                font-size: 14px;
+            }
+            
+            .header-right {
+                padding: 0 30px;
+                gap: 20px;
+            }
+        }
+        
+        /* Tablet horizontal (992px - 1199px) */
+        @media (max-width: 1199px) and (min-width: 992px) {
+            .top-bar {
+                padding: 8px 20px;
+            }
+            
+            .top-bar-left a,
+            .top-bar-right a {
+                font-size: 12px;
+            }
+            
+            .main-header {
+                height: 70px;
+            }
+            
+            .header-left {
+                height: 70px;
+            }
+            
+            .logo-container {
+                padding: 0 20px;
+            }
+            
+            .logo-claro {
+                height: 38px;
+            }
+            
+            .nav-item {
+                padding: 0 18px;
+                font-size: 13px;
+                gap: 6px;
+            }
+            
+            .header-right {
+                padding: 0 20px;
+                gap: 15px;
+            }
+            
+            .btn-mi-claro {
+                padding: 8px 18px;
+                font-size: 13px;
+            }
+            
+            .icon-btn {
+                font-size: 18px;
+            }
+        }
+        
+        /* Tablet vertical (768px - 991px) */
+        @media (max-width: 991px) and (min-width: 768px) {
+            .top-bar {
+                padding: 8px 15px;
+            }
+            
+            .top-bar-left,
+            .top-bar-right {
+                gap: 15px;
+            }
+            
+            .top-bar-left a,
+            .top-bar-right a {
+                font-size: 11px;
+            }
+            
+            .main-header {
+                height: 65px;
+            }
+            
+            .header-left {
+                height: 65px;
+            }
+            
+            .logo-container {
+                padding: 0 15px;
+            }
+            
+            .logo-claro {
+                height: 35px;
+            }
+            
+            .nav-item {
+                padding: 0 12px;
+                font-size: 12px;
+                gap: 5px;
+            }
+            
+            .nav-item .dropdown-arrow {
+                font-size: 8px;
+            }
+            
+            .header-right {
+                padding: 0 15px;
+                gap: 12px;
+            }
+            
+            .header-icons {
+                gap: 12px;
+            }
+            
+            .icon-btn {
+                font-size: 16px;
+            }
+            
+            .cart-badge {
+                width: 16px;
+                height: 16px;
+                font-size: 9px;
+                top: -6px;
+                right: -6px;
+            }
+            
+            .btn-mi-claro {
+                padding: 6px 14px;
+                font-size: 12px;
+                gap: 6px;
+            }
+            
+            .btn-mi-claro i {
+                font-size: 14px;
+            }
+        }
+        
+        /* Móvil (menos de 768px) - Menú hamburguesa */
+        @media (max-width: 767px) {
+            .top-bar {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 15px;
+                gap: 8px;
+            }
+            
+            .top-bar-left,
+            .top-bar-right {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .top-bar-left a,
+            .top-bar-right a {
+                font-size: 11px;
+            }
+            
+            .separator {
+                display: none;
+            }
+            
+            .main-header {
+                height: 60px;
+            }
+            
+            .header-left {
+                height: 60px;
+                width: 100%;
+                justify-content: space-between;
+                padding-right: 15px;
+            }
+            
+            .logo-container {
+                padding: 0 15px;
+            }
+            
+            .logo-claro {
+                height: 32px;
+            }
+            
+            /* Mostrar menú hamburguesa */
+            .menu-toggle {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+                cursor: pointer;
+                padding: 10px;
+                z-index: 101;
+            }
+            
+            .menu-toggle span {
+                width: 25px;
+                height: 3px;
+                background-color: #333333;
+                border-radius: 2px;
+                transition: all 0.3s ease;
+            }
+            
+            /* Ocultar nav en móvil por defecto */
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #F8F8F8;
+                flex-direction: column;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                z-index: 100;
+                height: auto;
+            }
+            
+            .main-nav.active {
+                display: flex;
+            }
+            
+            .nav-item {
+                width: 100%;
+                height: auto;
+                justify-content: space-between;
+                padding: 15px 20px;
+                border-bottom: 1px solid #E5E5E5;
+                font-size: 14px;
+            }
+            
+            .nav-item.active {
+                background-color: #D41E27;
+            }
+            
+            .header-right {
+                position: absolute;
+                right: 60px;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 0;
+                gap: 12px;
+            }
+            
+            .header-icons {
+                gap: 10px;
+            }
+            
+            .icon-btn {
+                font-size: 16px;
+            }
+            
+            .cart-badge {
+                width: 15px;
+                height: 15px;
+                font-size: 8px;
+                top: -5px;
+                right: -5px;
+            }
+            
+            .btn-mi-claro {
+                padding: 8px;
+                border-radius: 50%;
+            }
+            
+            .btn-mi-claro span {
+                display: none;
+            }
+            
+            .btn-mi-claro i {
+                font-size: 14px;
+            }
+        }
+        
+        /* Móvil pequeño (menos de 480px) */
+        @media (max-width: 479px) {
+            .top-bar-left a,
+            .top-bar-right a {
+                font-size: 10px;
+            }
+            
+            .main-header {
+                height: 55px;
+            }
+            
+            .header-left {
+                height: 55px;
+            }
+            
+            .logo-container {
+                padding: 0 10px;
+            }
+            
+            .logo-claro {
+                height: 28px;
+            }
+            
+            .header-right {
+                right: 50px;
+                gap: 8px;
+            }
+            
+            .header-icons {
+                gap: 8px;
+            }
+            
+            .icon-btn {
+                font-size: 14px;
+            }
+            
+            .btn-mi-claro {
+                padding: 6px;
+            }
+            
+            .btn-mi-claro i {
+                font-size: 12px;
+            }
+            
+            .menu-toggle span {
+                width: 22px;
+                height: 2px;
+            }
+            
+            .nav-item {
+                padding: 12px 15px;
+                font-size: 13px;
+            }
+        }
+
+        /* =============================================
+           CARRUSEL DE ANUNCIOS
+           ============================================= */
+        .ads-carousel {
+            position: relative;
+            width: 100%;
+            background-color: #1a1a1a;
+        }
+
+        .ads-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .ads-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .ad-slide {
+            display: none;
+            width: 100%;
+        }
+
+        .ad-slide.active {
+            display: block;
+        }
+
+        .ad-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Flechas de navegación */
+        .ads-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.3);
+            border: none;
+            color: #FFFFFF;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .ads-arrow:hover {
+            background-color: rgba(212, 30, 39, 0.8);
+        }
+
+        .ads-arrow-left {
+            left: 20px;
+        }
+
+        .ads-arrow-right {
+            right: 20px;
+        }
+
+        /* Indicadores (puntos) */
+        .ads-indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 0;
+            background-color: #8B0000;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator:hover {
+            transform: scale(1.1);
+        }
+
+        .indicator.active {
+            background-color: #D41E27;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* =============================================
+           RESPONSIVE - CARRUSEL
+           ============================================= */
+        @media (max-width: 1199px) {
+            .ads-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ads-arrow {
+                width: 35px;
+                height: 35px;
+                font-size: 14px;
+            }
+
+            .ads-arrow-left {
+                left: 10px;
+            }
+
+            .ads-arrow-right {
+                right: 10px;
+            }
+
+            .ads-indicators {
+                gap: 8px;
+                padding: 12px 0;
+            }
+
+            .indicator {
+                width: 10px;
+                height: 10px;
+            }
+
+            .indicator.active {
+                width: 25px;
+            }
+        }
+
+        @media (max-width: 479px) {
+            .ads-arrow {
+                width: 30px;
+                height: 30px;
+                font-size: 12px;
+            }
+
+            .ads-indicators {
+                gap: 6px;
+                padding: 10px 0;
+            }
+
+            .indicator {
+                width: 8px;
+                height: 8px;
+            }
+
+            .indicator.active {
+                width: 20px;
+                border-radius: 4px;
+            }
+        }
+
+        /* =============================================
+           CONTENIDO PRINCIPAL
+           ============================================= */
+        .main-content {
+            padding: 0;
+            background-color: #FFFFFF;
+        }
+
+        /* =============================================
+           SECCIÓN DE PRODUCTOS
+           ============================================= */
+        .productos-section {
+            padding: 40px 60px;
+            background-color: #FFFFFF;
+        }
+
+        .productos-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .productos-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #12100D;
+        }
+
+        .productos-nav-arrows {
+            display: flex;
+            gap: 10px;
+        }
+
+        .productos-arrow {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid #333333;
+            background-color: #FFFFFF;
+            color: #333333;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .productos-arrow:hover {
+            background-color: #D41E27;
+            border-color: #D41E27;
+            color: #FFFFFF;
+        }
+
+        /* Carrusel de productos */
+        .productos-carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .productos-carousel {
+            display: flex;
+            gap: 25px;
+            transition: transform 0.5s ease;
+        }
+
+        /* Card de producto */
+        .producto-card {
+            min-width: calc(25% - 19px);
+            max-width: calc(25% - 19px);
+            background-color: #FFFFFF;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .producto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .producto-card-header {
+            background-color: #FFFFFF;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .producto-nombre {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #12100D;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .producto-capacidad {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            color: #666666;
+        }
+
+        .producto-imagen-container {
+            position: relative;
+            padding: 20px;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .producto-imagen {
+            max-width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+        }
+
+        .producto-descuento {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #D41E27;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .producto-express {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        .producto-express img {
+            height: 25px;
+        }
+
+        /* Cuerpo de la card */
+        .producto-card-body {
+            padding: 20px;
+            background-color: #FFFFFF;
+        }
+
+        .producto-colores {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .color-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 1px solid #E0E0E0;
+        }
+
+        .producto-precio-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            color: #666666;
+            text-align: center;
+        }
+
+        .producto-precio-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .producto-precio {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #12100D;
+        }
+
+        .full-claro-badge {
+            background-color: #12100D;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .full-claro-badge span {
+            color: #D41E27;
+        }
+
+        .producto-precios-extra {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .precio-online,
+        .precio-regular {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            color: #888888;
+            display: block;
+        }
+
+        .precio-regular {
+            text-decoration: line-through;
+        }
+
+        .producto-max {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .max-badge {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .max-badge .max {
+            color: #D41E27;
+        }
+
+        .max-badge .ilimitado {
+            color: #12100D;
+        }
+
+        .max-precio {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            color: #12100D;
+        }
+
+        .btn-comprar {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #D41E27;
+            border-radius: 25px;
+            background-color: #FFFFFF;
+            color: #D41E27;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-comprar:hover {
+            background-color: #D41E27;
+            color: #FFFFFF;
+        }
+
+        /* Indicadores de productos */
+        .productos-indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 30px 0;
+        }
+
+        .producto-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #E0E0E0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .producto-indicator:hover {
+            background-color: #AAAAAA;
+        }
+
+        .producto-indicator.active {
+            background-color: #00A5A5;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* =============================================
+           RESPONSIVE - PRODUCTOS
+           ============================================= */
+        @media (max-width: 1399px) {
+            .productos-section {
+                padding: 35px 40px;
+            }
+            
+            .productos-title {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 1199px) {
+            .producto-card {
+                min-width: calc(33.333% - 17px);
+                max-width: calc(33.333% - 17px);
+            }
+        }
+
+        @media (max-width: 991px) {
+            .productos-section {
+                padding: 30px 20px;
+            }
+            
+            .productos-title {
+                font-size: 22px;
+            }
+            
+            .producto-card {
+                min-width: calc(50% - 13px);
+                max-width: calc(50% - 13px);
+            }
+            
+            .productos-arrow {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .productos-header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .productos-title {
+                font-size: 20px;
+            }
+            
+            .producto-card {
+                min-width: calc(100% - 0px);
+                max-width: calc(100% - 0px);
+            }
+            
+            .productos-carousel {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 479px) {
+            .productos-section {
+                padding: 25px 15px;
+            }
+            
+            .productos-title {
+                font-size: 18px;
+            }
+            
+            .producto-precio {
+                font-size: 24px;
+            }
+            
+            .productos-arrow {
+                width: 35px;
+                height: 35px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- =============================================
+         TOP BAR (Barra superior gris)
+         ============================================= -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <a href="#">Personas</a>
+            <a href="#">Empresas</a>
+        </div>
+        <div class="top-bar-right">
+            <a href="#">Información a Abonados y Usuarios</a>
+            <span class="separator">|</span>
+            <a href="#">
+                Más de Claro
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <span class="separator">|</span>
+            <a href="#">
+                <i class="fas fa-map-marker-alt location-icon"></i>
+                Perú
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- =============================================
+         HEADER PRINCIPAL (Navbar)
+         ============================================= -->
+    <header class="main-header">
+        <div class="header-left">
+            <div class="logo-container">
+                <a href="#">
+                    <img src="icons/clarotexto.png" alt="Claro" class="logo-claro">
+                </a>
+            </div>
+            
+            <!-- Navegación principal -->
+            <nav class="main-nav" id="mainNav">
+                <a href="#" class="nav-item">
+                    Servicios
+                    <i class="fas fa-caret-down dropdown-arrow"></i>
+                </a>
+                <a href="#" class="nav-item active">
+                    Tienda
+                    <i class="fas fa-caret-down dropdown-arrow"></i>
+                </a>
+                <a href="#" class="nav-item">
+                    Ayuda
+                    <i class="fas fa-caret-down dropdown-arrow"></i>
+                </a>
+                <a href="#" class="nav-item">
+                    Hablando Claro
+                    <i class="fas fa-caret-down dropdown-arrow"></i>
+                </a>
+            </nav>
+            
+            <!-- Menú hamburguesa (móvil) -->
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="header-right">
+            <div class="header-icons">
+                <button class="icon-btn" title="Carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">1</span>
+                </button>
+                <button class="icon-btn" title="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <a href="index.html" class="btn-mi-claro">
+                <i class="fas fa-user"></i>
+                <span>Mi Claro</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- =============================================
+         CONTENIDO PRINCIPAL (placeholder)
+         ============================================= -->
+    
+    <!-- Carrusel de Anuncios -->
+    <section class="ads-carousel">
+        <div class="ads-container">
+            <div class="ads-wrapper" id="adsWrapper">
+                <div class="ad-slide active">
+                    <img src="adds/add1.png" alt="Anuncio 1">
+                </div>
+                <div class="ad-slide">
+                    <img src="adds/add2.jpg" alt="Anuncio 2">
+                </div>
+                <div class="ad-slide">
+                    <img src="adds/add3.webp" alt="Anuncio 3">
+                </div>
+                <div class="ad-slide">
+                    <img src="adds/add4.webp" alt="Anuncio 4">
+                </div>
+                <div class="ad-slide">
+                    <img src="adds/add5.webp" alt="Anuncio 5">
+                </div>
+            </div>
+            
+            <!-- Flechas de navegación -->
+            <button class="ads-arrow ads-arrow-left" id="adsPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="ads-arrow ads-arrow-right" id="adsNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <!-- Indicadores (puntos) -->
+        <div class="ads-indicators" id="adsIndicators">
+            <span class="indicator active" data-index="0"></span>
+            <span class="indicator" data-index="1"></span>
+            <span class="indicator" data-index="2"></span>
+            <span class="indicator" data-index="3"></span>
+            <span class="indicator" data-index="4"></span>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <!-- Sección de Equipos Móviles -->
+        <section class="productos-section">
+            <div class="productos-header">
+                <h2 class="productos-title">Equipos móviles exclusivos en Claro</h2>
+                <div class="productos-nav-arrows">
+                    <button class="productos-arrow" id="productosPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="productos-arrow" id="productosNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="productos-carousel-container">
+                <div class="productos-carousel" id="productosCarousel">
+                    <!-- Las cards se cargarán dinámicamente desde el backend -->
+                </div>
+            </div>
+            
+            <!-- Indicadores del carrusel de productos -->
+            <div class="productos-indicators" id="productosIndicators">
+                <!-- Se generan dinámicamente -->
+            </div>
+        </section>
+    </main>
+
+    <!-- =============================================
+         JAVASCRIPT
+         ============================================= -->
+    <script>
+        // =============================================
+        // VARIABLES
+        // =============================================
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navItems = document.querySelectorAll('.nav-item');
+        
+        // Variable para guardar la opción seleccionada (por defecto Tienda)
+        let selectedItem = document.querySelector('.nav-item.active');
+        
+        // =============================================
+        // MENÚ MÓVIL
+        // =============================================
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        // Cerrar menú al hacer click fuera
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !mainNav.contains(e.target)) {
+                mainNav.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        });
+        
+        // =============================================
+        // NAVEGACIÓN - HOVER Y CLICK
+        // =============================================
+        navItems.forEach(item => {
+            // Al pasar el cursor - activar temporalmente
+            item.addEventListener('mouseenter', () => {
+                // Quitar active de todos
+                navItems.forEach(nav => nav.classList.remove('active'));
+                // Activar el que tiene hover
+                item.classList.add('active');
+            });
+            
+            // Al salir el cursor - restaurar el seleccionado
+            item.addEventListener('mouseleave', () => {
+                // Quitar active de todos
+                navItems.forEach(nav => nav.classList.remove('active'));
+                // Restaurar el seleccionado
+                if (selectedItem) {
+                    selectedItem.classList.add('active');
+                }
+            });
+            
+            // Al hacer click - seleccionar permanentemente
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Guardar como seleccionado
+                selectedItem = item;
+                
+                // Quitar active de todos
+                navItems.forEach(nav => nav.classList.remove('active'));
+                // Activar el clickeado
+                item.classList.add('active');
+                
+                // Cerrar menú móvil después de seleccionar
+                if (window.innerWidth < 768) {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        });
+        
+        // =============================================
+        // INICIALIZACIÓN
+        // =============================================
+        console.log('🔴 Claro Perú - Página de Inicio cargada');
+
+        // =============================================
+        // CARRUSEL DE ANUNCIOS
+        // =============================================
+        const slides = document.querySelectorAll('.ad-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.getElementById('adsPrev');
+        const nextBtn = document.getElementById('adsNext');
+        let currentSlide = 0;
+        let autoSlideInterval;
+
+        // Función para mostrar slide
+        function showSlide(index) {
+            // Validar índice
+            if (index >= slides.length) index = 0;
+            if (index < 0) index = slides.length - 1;
+            
+            currentSlide = index;
+
+            // Quitar active de todos los slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(ind => ind.classList.remove('active'));
+
+            // Activar slide actual
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+        }
+
+        // Siguiente slide
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        // Slide anterior
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Event listeners para flechas
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoSlide();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoSlide();
+        });
+
+        // Event listeners para indicadores
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+                resetAutoSlide();
+            });
+        });
+
+        // Auto slide cada 5 segundos
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        // Iniciar auto slide
+        startAutoSlide();
+
+        // =============================================
+        // CARRUSEL DE PRODUCTOS - BACKEND
+        // =============================================
+        const productosCarousel = document.getElementById('productosCarousel');
+        const productosIndicators = document.getElementById('productosIndicators');
+        const productosPrev = document.getElementById('productosPrev');
+        const productosNext = document.getElementById('productosNext');
+        
+        let productos = [];
+        let currentProductPage = 0;
+        let productosPerPage = 4;
+        let totalProductPages = 0;
+        let autoProductSlide;
+
+        // Configuración del backend
+        const API_URL = 'http://localhost:5000/api';
+
+        // Calcular productos por página según el ancho de pantalla
+        function calcularProductosPorPagina() {
+            const width = window.innerWidth;
+            if (width <= 767) return 1;
+            if (width <= 991) return 2;
+            if (width <= 1199) return 3;
+            return 4;
+        }
+
+        // Cargar productos desde el backend
+        async function cargarProductos() {
+            try {
+                // Usar endpoint de productos destacados (S23, S22, iPhone, etc.)
+                const response = await fetch(`${API_URL}/productos/destacados?limit=8`);
+                const data = await response.json();
+                
+                if (data.success && data.productos.length > 0) {
+                    productos = data.productos;
+                    renderizarProductos();
+                    generarIndicadoresProductos();
+                    iniciarAutoSlideProductos();
+                } else {
+                    cargarProductosEjemplo();
+                }
+            } catch (error) {
+                console.error('Backend no disponible, cargando datos de ejemplo...');
+                // Cargar datos de ejemplo si el backend no está disponible
+                cargarProductosEjemplo();
+            }
+        }
+
+        // Datos de ejemplo si el backend no está disponible
+        function cargarProductosEjemplo() {
+            productos = [
+                {
+                    id: 1,
+                    nombre: "Samsung Galaxy S23 8/256GB Negro",
+                    marca: "Samsung",
+                    modelo: "Galaxy S23",
+                    capacidad: "8GB / 256GB",
+                    precio_full_claro: 2899,
+                    precio_online: 2985,
+                    precio_regular: 3999,
+                    precio_max: 109.90,
+                    descuento: 28,
+                    imagen: "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s23-5g-1.jpg",
+                    colores: ["#000000", "#FFFFFF"]
+                },
+                {
+                    id: 2,
+                    nombre: "Samsung Galaxy S22 8/128GB Blanco",
+                    marca: "Samsung",
+                    modelo: "Galaxy S22",
+                    capacidad: "8GB / 128GB",
+                    precio_full_claro: 2499,
+                    precio_online: 2573,
+                    precio_regular: 3499,
+                    precio_max: 89.90,
+                    descuento: 29,
+                    imagen: "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s22-5g-1.jpg",
+                    colores: ["#FFFFFF", "#000000"]
+                },
+                {
+                    id: 3,
+                    nombre: "Samsung Galaxy S21 8/128GB Gris",
+                    marca: "Samsung",
+                    modelo: "Galaxy S21",
+                    capacidad: "8GB / 128GB",
+                    precio_full_claro: 1999,
+                    precio_online: 2058,
+                    precio_regular: 2799,
+                    precio_max: 89.90,
+                    descuento: 29,
+                    imagen: "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s21-5g-1.jpg",
+                    colores: ["#808080", "#000000"]
+                },
+                {
+                    id: 4,
+                    nombre: "Samsung Galaxy A54 5G 8/256GB",
+                    marca: "Samsung",
+                    modelo: "Galaxy A54",
+                    capacidad: "8GB / 256GB",
+                    precio_full_claro: 1599,
+                    precio_online: 1699,
+                    precio_regular: 2199,
+                    precio_max: 79.90,
+                    descuento: 27,
+                    imagen: "https://www.reuse.pe/cdn/shop/files/DescargasShopify-2025-08-18T124706.432.jpg?v=1755539286&width=675",
+                    colores: ["#000000", "#E6E6FA"]
+                },
+                {
+                    id: 5,
+                    nombre: "Apple iPhone 14 128GB Negro",
+                    marca: "Apple",
+                    modelo: "iPhone 14",
+                    capacidad: "6GB / 128GB",
+                    precio_full_claro: 3499,
+                    precio_online: 3604,
+                    precio_regular: 4599,
+                    precio_max: 119.90,
+                    descuento: 24,
+                    imagen: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-2.jpg",
+                    colores: ["#000000", "#FFFFFF"]
+                },
+                {
+                    id: 6,
+                    nombre: "Xiaomi Redmi Note 12 8/256GB",
+                    marca: "Xiaomi",
+                    modelo: "Redmi Note 12",
+                    capacidad: "8GB / 256GB",
+                    precio_full_claro: 1099,
+                    precio_online: 1132,
+                    precio_regular: 1499,
+                    precio_max: 69.90,
+                    descuento: 27,
+                    imagen: "https://www.blogtecno.mx/wp-content/uploads/2024/07/D_NQ_NP_860370-MLU73572824681_122023-O.webp",
+                    colores: ["#000000", "#0066CC"]
+                },
+                {
+                    id: 7,
+                    nombre: "Google Pixel 7 8/128GB",
+                    marca: "Google",
+                    modelo: "Pixel 7",
+                    capacidad: "8GB / 128GB",
+                    precio_full_claro: 2199,
+                    precio_online: 2265,
+                    precio_regular: 2999,
+                    precio_max: 89.90,
+                    descuento: 27,
+                    imagen: "https://www.wikiversus.com/_bundles/products/moviles/google-pixel-7/google-pixel-7_hu005aabae3334419435ce6c8f07845413_72349_832x624_fill_q75_lanczos_center.jpg",
+                    colores: ["#000000"]
+                },
+                {
+                    id: 8,
+                    nombre: "POCO F5 12/256GB Negro",
+                    marca: "POCO",
+                    modelo: "POCO F5",
+                    capacidad: "12GB / 256GB",
+                    precio_full_claro: 1499,
+                    precio_online: 1544,
+                    precio_regular: 2099,
+                    precio_max: 79.90,
+                    descuento: 29,
+                    imagen: "https://www.peru-smart.com/wp-content/uploads/2023/08/CELU599NEGRO-256GB.jpg",
+                    colores: ["#000000", "#FFFFFF"]
+                }
+            ];
+            renderizarProductos();
+            generarIndicadoresProductos();
+            iniciarAutoSlideProductos();
+        }
+        // Renderizar cards de productos
+        function renderizarProductos() {
+            productosCarousel.innerHTML = '';
+            
+            productos.forEach(producto => {
+                const card = document.createElement('div');
+                card.className = 'producto-card';
+                card.innerHTML = `
+                    <div class="producto-card-header">
+                        <h3 class="producto-nombre">${producto.modelo}</h3>
+                        <p class="producto-capacidad">${producto.capacidad}</p>
+                        <div class="producto-imagen-container">
+                            <span class="producto-descuento">-${producto.descuento}% de descuento</span>
+                            <img src="${producto.imagen}" alt="${producto.modelo}" class="producto-imagen" onerror="this.src='https://via.placeholder.com/200x250?text=Imagen+no+disponible'">
+                        </div>
+                    </div>
+                    <div class="producto-card-body">
+                        <div class="producto-colores">
+                            ${producto.colores.map(color => `<span class="color-dot" style="background-color: ${color}"></span>`).join('')}
+                        </div>
+                        <p class="producto-precio-label">Ahora desde</p>
+                        <div class="producto-precio-row">
+                            <span class="producto-precio">S/ ${producto.precio_full_claro.toLocaleString()}</span>
+                            <span class="full-claro-badge"><span>Full</span> Claro</span>
+                        </div>
+                        <div class="producto-precios-extra">
+                            <span class="precio-online">Precio Online: S/ ${producto.precio_online.toLocaleString()}</span>
+                            <span class="precio-regular">Precio regular: S/ ${producto.precio_regular.toLocaleString()}</span>
+                        </div>
+                        <div class="producto-max">
+                            <span class="max-badge"><span class="max">Max</span><span class="ilimitado">Ilimitado</span></span>
+                            <span class="max-precio">${producto.precio_max.toFixed(2)}</span>
+                        </div>
+                        <button class="btn-comprar" onclick="comprarProducto(${producto.id})">Comprar Online</button>
+                    </div>
+                `;
+                productosCarousel.appendChild(card);
+            });
+        }
+
+        // Generar indicadores de productos
+        function generarIndicadoresProductos() {
+            productosPerPage = calcularProductosPorPagina();
+            totalProductPages = Math.ceil(productos.length / productosPerPage);
+            
+            productosIndicators.innerHTML = '';
+            for (let i = 0; i < totalProductPages; i++) {
+                const indicator = document.createElement('span');
+                indicator.className = `producto-indicator ${i === 0 ? 'active' : ''}`;
+                indicator.dataset.index = i;
+                indicator.addEventListener('click', () => {
+                    irAPaginaProducto(i);
+                    resetAutoSlideProductos();
+                });
+                productosIndicators.appendChild(indicator);
+            }
+        }
+
+        // Ir a página de productos
+        function irAPaginaProducto(index) {
+            if (index >= totalProductPages) index = 0;
+            if (index < 0) index = totalProductPages - 1;
+            
+            currentProductPage = index;
+            
+            const cardWidth = productosCarousel.querySelector('.producto-card').offsetWidth;
+            const gap = 25;
+            const offset = currentProductPage * productosPerPage * (cardWidth + gap);
+            
+            productosCarousel.style.transform = `translateX(-${offset}px)`;
+            
+            // Actualizar indicadores
+            document.querySelectorAll('.producto-indicator').forEach((ind, i) => {
+                ind.classList.toggle('active', i === currentProductPage);
+            });
+        }
+
+        // Siguiente página de productos
+        function siguientePaginaProducto() {
+            irAPaginaProducto(currentProductPage + 1);
+        }
+
+        // Página anterior de productos
+        function anteriorPaginaProducto() {
+            irAPaginaProducto(currentProductPage - 1);
+        }
+
+        // Event listeners para flechas de productos
+        productosNext.addEventListener('click', () => {
+            siguientePaginaProducto();
+            resetAutoSlideProductos();
+        });
+
+        productosPrev.addEventListener('click', () => {
+            anteriorPaginaProducto();
+            resetAutoSlideProductos();
+        });
+
+        // Auto slide de productos
+        function iniciarAutoSlideProductos() {
+            autoProductSlide = setInterval(siguientePaginaProducto, 6000);
+        }
+
+        function resetAutoSlideProductos() {
+            clearInterval(autoProductSlide);
+            iniciarAutoSlideProductos();
+        }
+
+        // Función para comprar producto
+        function comprarProducto(id) {
+            console.log('Comprando producto ID:', id);
+            alert(`Agregando producto ${id} al carrito`);
+        }
+
+        // Recalcular al cambiar tamaño de ventana
+        window.addEventListener('resize', () => {
+            generarIndicadoresProductos();
+            irAPaginaProducto(0);
+        });
+
+        // Cargar productos al iniciar
+        // Intenta primero con el backend, si falla usa datos de ejemplo
+        cargarProductos();
+    </script>
+</body>
+</html>
