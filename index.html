@@ -710,7 +710,7 @@
             return true;
         }
 
-        async function iniciarSesion() {
+        /*async function iniciarSesion() {
             if (!validateForm()) return;
 
             setLoading(btnIniciarSesion, true);
@@ -748,6 +748,19 @@
             } finally {
                 setLoading(btnIniciarSesion, false);
             }
+        }
+        */
+       async function iniciarSesion() {
+            if (!validateForm()) return;
+
+            setLoading(btnIniciarSesion, true);
+
+            // Simulación de login exitoso
+            setTimeout(() => {
+                setLoading(btnIniciarSesion, false);
+                // Redirigir a la página de inicio
+                window.location.href = 'paginadeinicio.html';
+            }, 1000);
         }
 
         async function crearCuenta() {
